@@ -1,0 +1,35 @@
+.theme__button {
+  width: 24px;
+  height: 24px;
+  border-radius: 25%;
+  border: 1px solid gray;
+  opacity: 0.5;
+  transition: transform 0.3s;
+}
+
+.theme__button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.theme__button.active {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.theme__button_dark {
+  background-color: var(--bg-color-dark);
+}
+
+.theme__button_light {
+  background-color: var(--bg-color-light);
+}
+
+.theme__button_gray {
+  background-color: var(--bg-color-gray);
+}
+
+.theme__button_orange {
+  background-color: var(--bg-color-orange);
+}

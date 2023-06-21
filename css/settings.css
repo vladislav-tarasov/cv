@@ -1,0 +1,42 @@
+.settings {
+  margin-left: auto;
+  margin-bottom: var(--offset-md);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.settings__pdf-icon {
+  color: var(--text-color-primary);
+}
+
+.settings__pdf-button {
+  font-size: var(--font-size-md);
+  border: none;
+  background-color: transparent;
+  margin-right: var(--offset-sm);
+  padding: 0;
+}
+
+.settings__pdf-button:hover {
+  cursor: pointer;
+}
+
+.settings__translation-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  border: none;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  text-transform: uppercase;
+  color: var(--text-color-primary);
+  margin-right: var(--offset-sm);
+}
+
+.settings__translation-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

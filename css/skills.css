@@ -1,0 +1,21 @@
+.skills__chips {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: calc(var(--offset-md) * -1);
+}
+
+.skills__chip {
+  border-radius: 8px;
+  font-size: var(--font-size-sm);
+  background-color: var(--chip-bg-color);
+  color: var(--text-color-primary);
+  padding: var(--offset-sm) var(--offset-md);
+  margin: 0 var(--offset-md) var(--offset-md) 0;
+  transition: 0.3s;
+}
+
+.skills__chip:hover {
+  cursor: default;
+  box-shadow: var(--default-box-shadow);
+}

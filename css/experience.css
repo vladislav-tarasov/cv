@@ -1,0 +1,39 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience__item:not(:last-child) {
+  margin-bottom: var(--font-size-xl);
+}
+
+.experience__company {
+  font-size: var(--font-size-md);
+  color: var(--text-color-primary);
+  margin-bottom: var(--offset-sm);
+}
+
+.experience__job-title {
+  font-size: var(--font-size-xss);
+  color: var(--text-color-secondary);
+  margin-bottom: var(--offset-sm);
+}
+
+.experience__period {
+  font-size: var(--font-size-xss);
+  color: var(--text-color-secondary);
+  margin-bottom: var(--offset-md);
+}
+
+.experience__description-title {
+  font-size: var(--font-size-sm);
+  color: var(--text-color-primary);
+  margin: var(--offset-sm);
+}
+
+.experience__description {
+  font-size: var(--font-size-sm);
+  color: var(--text-color-primary);
+  color: var(--text-color-secondary);
+  margin: var(--offset-sm);
+}

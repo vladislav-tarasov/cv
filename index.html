@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=Rajdhani:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/experience.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/info.css" />
+    <link rel="stylesheet" href="css/settings.css" />
+    <link rel="stylesheet" href="css/skills.css" />
+    <link rel="stylesheet" href="css/tooltip.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <title>CV Tarasov Vladislav</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="main-header wrapper">
+        <nav class="navigation">
+          <div class="navigation-wrapper">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a href="#skills" data-i18n="nav.skills">Скилы</a>
+              </li>
+              <li class="navigation__item">
+                <a href="#experience" data-i18n="nav.experience">Опыт</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <section class="settings">
+          <div class="tooltip" role="tooltip">
+            <span class="tooltip-text" data-i18n="settings.pdfButton"
+              >Скачать резюме</span
+            >
+            <button
+              class="settings__pdf-button js-download-resume"
+              onclick="window.open('./pdf/TarasovVladislavProfile.pdf');"
+            >
+              <i class="fa fa-file-pdf-o settings__pdf-icon"></i>
+            </button>
+          </div>
+          <div class="tooltip" role="tooltip">
+            <span class="tooltip-text" data-i18n="settings.translationButton"
+              >Изменить язык</span
+            >
+            <button
+              type="button"
+              class="settings__translation-button"
+              data-change-lang
+            ></button>
+          </div>
+          <div class="theme js-theme">
+            <div class="tooltip" role="tooltip">
+              <span class="tooltip-text" data-i18n="settings.orangeTooltipText"
+                >Оранжевая тема</span
+              >
+              <button
+                class="theme__button theme__button_orange"
+                data-theme-variant="orange"
+              ></button>
+            </div>
+            <div class="tooltip" role="tooltip">
+              <span class="tooltip-text" data-i18n="settings.lightTooltipText"
+                >Светлая тема</span
+              >
+              <button
+                class="theme__button theme__button_light"
+                data-theme-variant="light"
+              ></button>
+            </div>
+            <div class="tooltip" role="tooltip">
+              <span class="tooltip-text" data-i18n="settings.grayTooltipText"
+                >Серая тема</span
+              >
+              <button
+                class="theme__button theme__button_gray"
+                data-theme-variant="gray"
+              ></button>
+            </div>
+            <div class="tooltip" role="tooltip">
+              <span class="tooltip-text" data-i18n="settings.darkTooltipText"
+                >Тёмная тема</span
+              >
+              <button
+                class="theme__button theme__button_dark"
+                data-theme-variant="dark"
+              ></button>
+            </div>
+          </div>
+        </section>
+      </header>
+
+      <script>
+        let themeName = "light";
+        const valueFormStorage = localStorage.getItem("theme");
+
+        if (valueFormStorage) {
+          themeName = JSON.parse(valueFormStorage).value;
+        }
+
+        document.body.dataset.theme = themeName;
+        document
+          .querySelector(`button[data-theme-variant="${themeName}"]`)
+          ?.classList.add("active");
+      </script>
+
+      <div class="wrapper" id="resume">
+        <section id="user-info" class="box user-info-container">
+          <div class="user-info__avatar-wrapper">
+            <img
+              src="imgs/IMG_0019.jpg"
+              alt="avatar"
+              class="user-info__avatar"
+              width="164px"
+              height="164px"
+              loading="lazy"
+            />
+          </div>
+          <div class="user-info__content-wrapper">
+            <h1 class="user-info__name" data-i18n="info.name">
+              Владислав Тарасов
+            </h1>
+            <ul class="user-info__list">
+              <li class="user-info__item">
+                <span class="text-secondary" data-i18n="info.location"
+                  >Расположение:</span
+                >
+                <strong class="text-primary" data-i18n="info.locationVal"
+                  >Минск, Беларусь</strong
+                >
+              </li>
+              <li class="user-info__item">
+                <span class="text-secondary" data-i18n="info.linkedin"
+                  >Linkedin:</span
+                >
+                <a
+                  class="link"
+                  href="https://www.linkedin.com/in/vladislav-tarasov-148b95183/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><strong class="text-primary" data-i18n="info.linkedinVal"
+                    >Vladislav Tarasov</strong
+                  ></a
+                >
+              </li>
+              <li class="user-info__item">
+                <span class="text-secondary" data-i18n="info.phone"
+                  >Телефон:</span
+                >
+                <a class="link" href="tel:+375297786613"
+                  ><strong class="text-primary" data-i18n="info.phoneVal"
+                    >778-66-13</strong
+                  ></a
+                >
+              </li>
+              <li class="user-info__item">
+                <span class="text-secondary" data-i18n="info.email"
+                  >Почта:</span
+                >
+                <a class="link" href="mailto:vladislav.tarasov@tut.by"
+                  ><strong class="text-primary" data-i18n="info.emailVal"
+                    >vladislav.tarasov@tut.by</strong
+                  ></a
+                >
+              </li>
+              <li class="user-info__item">
+                <span class="text-secondary" data-i18n="info.git">Гитхаб:</span>
+                <a
+                  class="link"
+                  href="https://github.com/vladislav-tarasov"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><strong class="text-primary" data-i18n="info.gitVal"
+                    >vladislav-tarasov</strong
+                  ></a
+                >
+              </li>
+              <li class="user-info__item">
+                <span class="text-secondary" data-i18n="info.telegram"
+                  >Телеграм:</span
+                >
+                <a
+                  class="link"
+                  href="https://t.me/VladTarasov"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><strong
+                    class="text-primary"
+                    data-i18n="info.telegramVal"
+                  ></strong
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <header class="header">
+          <h3 class="header-title" data-i18n="titles.skills">Опыт</h3>
+        </header>
+        <section id="skills" class="box skills">
+          <ul class="skills__chips">
+            <li class="skills__chip" data-i18n="skills.git">GIT</li>
+            <li class="skills__chip" data-i18n="skills.html">HTML</li>
+            <li class="skills__chip" data-i18n="skills.css">CSS</li>
+            <li class="skills__chip" data-i18n="skills.jss">JSS</li>
+            <li class="skills__chip" data-i18n="skills.sc">
+              Styled Components
+            </li>
+            <li class="skills__chip" data-i18n="skills.mui">MUI</li>
+            <li class="skills__chip" data-i18n="skills.js">Javascript</li>
+            <li class="skills__chip" data-i18n="skills.ts">Typescript</li>
+            <li class="skills__chip" data-i18n="skills.react">React</li>
+            <li class="skills__chip" data-i18n="skills.next">Next.js</li>
+            <li class="skills__chip" data-i18n="skills.node">NodeJS</li>
+            <li class="skills__chip" data-i18n="skills.nest">Nest.js</li>
+            <li class="skills__chip" data-i18n="skills.reactQuery">
+              React Query
+            </li>
+            <li class="skills__chip" data-i18n="skills.formik">Formik</li>
+            <li class="skills__chip" data-i18n="skills.reduxSaga">
+              Redux Saga
+            </li>
+            <li class="skills__chip" data-i18n="skills.mobxStateTree">
+              MobX-state-tree
+            </li>
+            <li class="skills__chip" data-i18n="skills.jest">Jest</li>
+            <li class="skills__chip" data-i18n="skills.cypress">Cypress</li>
+            <li class="skills__chip" data-i18n="skills.rtl">
+              React Testing Library
+            </li>
+          </ul>
+        </section>
+
+        <header class="header">
+          <h3 class="header-title" data-i18n="titles.experience">Опыт</h3>
+        </header>
+        <section id="experience" class="experience box">
+          <article class="experience__item">
+            <h5 class="experience__company">
+              <a
+                href="https://astondevs.ru/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><strong class="text-primary">Aston</strong></a
+              >
+            </h5>
+            <p class="experience__job-title" data-i18n="experience.jobTitle">
+              Инженер-программист
+            </p>
+            <p class="experience__period">11.2022 - ...</p>
+            <h6 class="experience__description-title">
+              <strong>Ростелеком Контакт-центр МЦ НТТ</strong>
+            </h6>
+            <p class="experience__description">
+              Компания предоставляет услуги аутсорсингового контактного центра и
+              спектр цифровых продуктов собственной разработки в области
+              клиентского сервиса для коммерческих компаний, государственных
+              структур, участвует в реализации крупных федеральных проектов:
+              Единый государственный экзамен, единый день голосования, перепись
+              населения и других. Действующие операторские площадки «Ростелеком
+              Контакт-центра» расположены в 19 городах России, штат операторов
+              насчитывает свыше 7 000 человек.
+            </p>
+          </article>
+          <article class="experience__item">
+            <h5 class="experience__company">
+              <a
+                href="https://www.21vek.by/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><strong class="text-primary">21vek</strong></a
+              >
+            </h5>
+            <p class="experience__job-title" data-i18n="experience.jobTitle">
+              Инженер-программист
+            </p>
+            <p class="experience__period">06.2022 - 10.2022</p>
+            <p class="experience__description">
+              Компания, которая зарекомендовала себя как надежный
+              онлайн-гипермаркет. Данный олайн-гипермаркет поддерживает высокий
+              уровень интернет-торговли, что подтверждают присужденные премии
+            </p>
+          </article>
+          <article class="experience__item">
+            <h5 class="experience__company">
+              <a
+                href="https://andersenlab.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><strong class="text-primary">Andersen</strong></a
+              >
+            </h5>
+            <p class="experience__job-title" data-i18n="experience.jobTitle">
+              Инженер-программист
+            </p>
+            <p class="experience__period">08.2018 - 05.2022</p>
+            <h6 class="experience__description-title">
+              <strong>Luna</strong>
+            </h6>
+            <p class="experience__description">
+              Компания Mission:Luna создает сервис для управления повседневными
+              финансами, платежами, сбережениями, личным и семейным бюджетом.
+            </p>
+            <h6 class="experience__description-title">
+              <strong>Roseltorg</strong>
+            </h6>
+            <p class="experience__description">
+              Торговая площадка Roseltorg – крупнейший федеральный оператор
+              электронной торговли для государственных заказчиков,
+              государственных компаний и коммерческих предприятий.
+            </p>
+
+            <h6 class="experience__description-title">
+              <strong>Voxxify</strong>
+            </h6>
+            <p class="experience__description">
+              Платформа для измерения удовлетворенности сотрудников крупной
+              корпорации, специализирующейся на ИТ. Используя принципы CSAT,
+              сервис предоставляет руководству актуальную информацию о
+              потребностях ключевых сотрудников, их удовлетворенности и т. д.
+              Платформа помогает значительно сократить расходы компании, таким
+              образом, инвестирование в постоянные измерения удовлетворенности
+              сотрудников помогает сэкономить деньги за счет своевременного
+              реагирования на возникающие проблемы.
+            </p>
+            <h6 class="experience__description-title"><strong>Ober</strong></h6>
+            <p class="experience__description">
+              Платформа для организации виртуальных выставок с помощью Cisco
+              Webex. Эта платформа помогает решить проблему отмены выставок
+              из-за COVID-19, а также улучшить традиционные выставки в будущем.
+              Ober предоставляет пользователям (потенциальным посетителям
+              выставок и экспонентам) возможность познакомиться с участниками
+              выставки и их творчеством, связаться с торговыми представителями
+              через чат, голосовые и видеозвонки, продвигать собственные
+              продукты и т. д.
+            </p>
+          </article>
+        </section>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="screen-informer" hidden>
+      <div class="modal">
+        <h2 data-i18n="informers.screenWidth"></h2>
+      </div>
+    </div>
+
+    <script type="module" src="js/storage.js"></script>
+    <script type="module" src="js/theme.js"></script>
+    <script type="module" src="js/locales.js"></script>
+    <script type="module" src="js/translator.js"></script>
+  </body>
+</html>
